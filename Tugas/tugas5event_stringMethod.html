@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Concert+One|Darker+Grotesque|Dosis|Fredoka+One|Raleway|Staatliches&display=swap" rel="stylesheet">
+	<link rel="icon" type="image/png" href="http://pluspng.com/img-png/logo-javascript-png-file-javascript-logo-png-1052.png">
+	<title>iyasmzn | JAVASCRIPT LESSON</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+		}
+		body {
+			background-image: url('https://i.pinimg.com/originals/08/e4/12/08e4129b6d96d54c3e1191411f1f900a.jpg');
+		}
+		#header {
+			padding: 30px;
+			background-color: rgba(0,0,0,1);
+			border-radius: 0px 0px 40px 40px;
+			margin-bottom: 20px; 
+			box-shadow: 3px 3px 1px rgba(250,250,250,0.5);
+		}
+		#header h1 {
+			text-shadow: 3px 3px 1px white;
+			font-size: 80px;
+			color: grey;
+			letter-spacing: 8px;
+		}
+		#js {
+			font-size: 150px;
+			text-shadow: none;
+			color: yellow;
+		}
+		#bg1 {
+			margin: auto;
+			background-color: rgba(250,250,250,0.9);
+			border-top: 3px solid grey;
+			border-bottom: 3px solid grey;
+			width: 90%;
+		}
+		h1[name="title"] {
+			font-size: 60px;
+		}
+		h1 {
+			font-family: 'Staatliches', cursive;
+			text-align: center;
+			color: black;
+			font-size: 45px;
+			text-shadow: 3px 3px 2px grey;
+			margin-top: 40px;
+		}
+		h3{
+			letter-spacing: 2px;
+			font-family: 'Darker Grotesque', sans-serif;
+			text-transform: capitalize;
+			text-align: center;
+			color: red;
+			text-shadow: 1px 1px 1px white;
+			font-size: 25px;
+		}
+		#teks1_, #teks2_, #teks3_, #slice, #substring {
+			padding-left: 5px;
+			font-family: 'Concert One', cursive;
+			padding-right: 5px;
+			padding-bottom: 15px;
+			width: 70%;
+			height: auto;
+			border: none;
+			border-left: 5px solid orange;
+			border-right: 5px solid orange;
+			border-radius: 5px;
+			font-size: 19px;
+			color: orange;
+			background-color: rgba(250,250,250,0.3);
+		}
+		#img1 {
+			width: 15%;
+			margin: auto;
+		}
+		#shown {
+			display: none;
+			margin: auto;
+			width: 60%;
+			height: 300px;
+		}
+		#shown img {
+			width: 100%;
+			height: 260px;
+		}
+		p {
+			font-family: 'Raleway', sans-serif;
+			color: black;
+			text-align: center;
+			height: auto;
+		}
+		p b {
+			font-family: 'Dosis', sans-serif;
+			color: darkblue;
+			font-size: 20px;
+		}
+		hr {
+			margin-left: 10%; 
+			margin-right: 10%; 
+			margin-top: 10px;
+		}
+		button, select {
+			text-transform: uppercase;
+			font-weight: bold;
+			padding: 5px;
+			border: 3px solid white;
+		}
+		button:hover, select:hover {
+			border-radius: 10px;
+			border: 3px solid grey;
+		}
+		button:active, select:active {
+			border: 3px solid black;
+			border-radius: 12px;
+			transform: translateY(2px) translateX(0px);
+		}
+		input {
+			overflow: auto;
+			border: none;
+			border-bottom: 2px solid grey;
+			border-radius: 10px;
+		}
+		input:hover {
+			border-bottom: 2px solid yellow;
+		}
+		input:active {
+			border-bottom: 2px solid orange;
+			transform: translateY(2px) translateX(2px);
+
+		}
+		input[name="concat"] {
+			width: 100px;
+		}
+		input[id="charAtNum"], input[id="charCodeAtNum"], input[id="typehere"], input[name="split"] {
+			width: 50px;
+			text-align: center;
+			overflow: auto;
+		}
+	</style>
+</head>
+<body onload="load()">
+	<div id="header">
+		<h1 name="title"><span id="js">JS</span><span style="font-size: 150px;color: white;text-shadow: none;"> | </span>JAVASCRIPT</h1>
+	</div>
+	<div id="bg1">
+	<h1>JS Events</h1><hr>
+	<!-- ONCLICK -->
+	<h3>Saat Diklik</h3>
+	<p>
+		<button id="shown_input" onclick="shown();">CLICK IT!</button>
+		<div id="shown" >
+			<p>klik lagi untuk menyembunyikan lagi</p>
+			<img src="https://jowonews.com/wp-content/uploads/2018/05/Bom-640x429.jpg">
+		</div><br>
+	</p>
+	<p>
+		<button onclick="this.innerHTML='ini akan muncul pada button jika kamu mengeklik tombol buttonnya'">onclick</button>
+	</p>
+	<!-- ONCHANGE -->
+	<h3>ONCHANGE</h3>
+	<p>
+		<select id="pilihan" onchange="change_func()">
+			<option value="change1">change1</option>
+			<option value="change2">change2</option>
+			<option value="change3">change3</option>
+			<option value="change4">change4</option>
+		</select>
+	</p>	
+	<p id="keluar"></p>
+	<!-- ONMOUSEOVER + ONMOUSEOUT -->
+	<h3 id="berubah" onmouseover="gantiwarna()" onmouseout="warnabiasa()">Arahkan mouse ke objek</h3>
+	<div id="img1">
+		<img onmouseover="membesar(this)" onmouseout="normal(this)" src="https://www.freeiconspng.com/uploads/superman-png-16.png" width="100" border="0">
+	</div>
+	<!-- KEYDOWN -->
+	<h3>Saat mengetik pada keyboard</h3>
+	<p>Masukkan huruf apa saja didalam input!</p>
+	<p><input type="text" onkeydown="keyfunc(event)" onkeyup="keyfunc2()" id="typehere"></p>
+	<p>
+		Key = 
+		<b><span id="hurufyangdiketikkan"></span></b><br>
+		Yang diketikkan adl = 
+		<b><span id="hurufyangdiketikkan2"></span></b>
+	</p>
+
+	<h1>JS String Methods</h1><hr>
+	<!-- String Length -->
+	<h3>length</h3>
+	<p>
+	<input id="teks1_" type="button" value="Kalimat ini akan dihitung jumlah hurufnya, termasuk dengan spasi dan , atau yang lainya."><br>
+		Jumlah huruf diatas adalah : 
+		<b><span id="txtlength"></span></b>
+	</p>
+	<!-- String indexOf -->
+	<h3>indexOf</h3> 
+	<p>
+		<input id="teks2_" type="button" readonly="readonly" value="Kalimat ini akan mencari urutan huruf atau awal kata yang akan dicari." /><br>
+		Yang dicari kali ini adalah kata 'akan' dalam kalimat diatas, yang berada di : 
+		<b><span id="txtindexof"></span></b>
+	</p>
+	<!-- String lastIndexOf -->
+	<h3>lastIndexOf</h3>
+	<p>
+		<input id="teks3_" type="button" value="Akan mencari urutan kata yang terakhir jika kita memiliki kata yang sama. Sama sama sama.">
+		<br>Mencari urutan yang terakhir kata 'sama' pada kalimat diatas : 
+		<b><span id="lastindex"></span></b><br>
+		search mirip dengan indexOf
+	</p>
+	<!-- String Slice -->
+	<h3>slice</h3>
+	<p>
+		<input id="slice" type="button" value="no matter what you say no matter what you do"><br>
+		hasil : <b><span id="gone"></span></b><br>
+		diatas adalah potongan diantara huruf dari urutan ke-10 sampai 22/slice(10,22)<br>
+		jika hanya satu yang diisi pada functionnya/slice(10)<br>
+		hasil : <b><span id="gone2"></span></b><br>
+		jika diisi dengan minus(-) pada functionnya/slice(-11)<br>
+		hasil : <b><span id="gone3"></span></b>
+	</p>
+	<!-- substring method -->
+	<h3>substring method</h3>
+	<p>
+		<input id="substring" type="button" value="gotta moving so fast"><br>
+		hasil : <b><span id="substring2"></span></b><br>
+		hampir sama dengan slice, bedanya adalah jika substr --> ('huruf awal yang akan diambil','berapa huruf yang akan diambil setelahnya'), <br> dan sama dengan slice jika diisi dengan minus(-) akan mengambil dari yang belakang
+	</p>
+	<!-- STR REPLACE -->
+	<h3>Replace</h3>
+	<p>
+		button dibawah akan mengganti kata 'hate' menjadi 'love' atau sebaliknya
+		<br><button onclick="ngganti()">CHANGE!</button><br>
+		<b><span id="repl">i am very very HATE you!</span></b><br>
+		replace() method itu jika kata yang mau diganti tidak hanya satu, yang terganti adalah kata yang urutan pertama, <br> untuk mengganti semuanya bisa menggunakan <b><i>/yourwords/g</i></b>. Dan dia case sensitive, untuk mengakalinya menggunakan <b><i>/yourwords/i</i></b>
+	</p>
+	<!-- to UPPER & LOWER CASE -->
+	<h3>Upper/Lower Case</h3>
+	<p>
+		<button onclick="upper()">upper</button>
+		<button onclick="lower()">lower</button><br>
+		<b><span id="lower">this text is lowercase</span></b>
+	</p>
+	<!-- CONCAT -->
+	<h3>Menggabungkan Kata</h3>
+	<p>
+		teks 1 =<input name="concat" type="text" id="concat3_1">
+		teks 2 =<input name="concat" type="text" id="concat3_2">
+		teks 3 =<input name="concat" type="text" id="concat3_3">
+		<br><button id="concatbutt" onclick="concat3()">FUUSIOON!!!</button><br>
+		<b><span id="wordsss" style="text-transform: capitalize;"></span></b>
+	</p>
+	<!-- TRIM -->
+	<h3>Removing White Space</h3>
+	<p>
+		<button onclick="trim()">NoTrim</button>
+		<button onclick="trim2()">WithTrim</button>
+	</p>
+	<!-- charAt -->
+	<h3>Take character at a given position</h3>
+	<p>
+		<span id="charAt">The charAt() method returns the character at a given position.<br> Isi input dibawah dengan nomor urutan character yang ingin kamu ambil!</span><br>
+		<input type="number" id="charAtNum"><br>
+		<button id="charAtBut" onclick="charAtBut()">TAKE!</button><br>you take : <b><span id="charAtFin"></span></b>
+	</p>
+	<!-- charCodeAt -->
+	<h3>Take Code character at a given position</h3>
+	<p>
+		<span id="charCodeAt">The charCodeAt() method returns the unicode of the character at a given position.<br> Isi input dibawah dengan nomor urutan character yang ingin kamu ambil!</span><br>
+		<input type="number" id="charCodeAtNum"><br>
+		<button id="charCodeAtBut" onclick="charCodeAtBut()">TAKE!</button><br>you take : <b><span id="charCodeAtFin"></span></b>
+	</p>
+	<!-- SPLIT -->
+	<h3>Converting string to array</h3>
+	<p>
+		<span id="splitTeks">I|Y|A|S|M|U|Z|A|N|I</span><br>
+		NoSplit : <input type="number" id="splitNum1" name="split"> <button onclick="split1()">Taked</button> = <b><span id="split1"></span></b><br>
+		WithSplit : <input type="number" name="split" id="splitNum2"> <button onclick="split2()">Taked</button> = <b><span id="split2"></span></b>
+	</p>
+	</div>
+	<script type="text/javascript">
+	//JS EVENTS
+		// ONCLICK
+		function shown() {
+			var showed = document.getElementById("shown");
+			if (showed.style.display == "block") {
+				showed.style.display = "none";
+			}
+			else {showed.style.display = "block";}
+		}
+		//ONCHANGE FUNCTION
+		function change_func() {
+			var pilih = document.getElementById('pilihan').value;
+			document.getElementById('keluar').innerHTML = "Kamu memilih " + pilih;
+		}
+		// MOUSEOVER FUNCTION
+		function gantiwarna() {
+			document.getElementById('berubah').style.color="black";
+		}
+		function warnabiasa() {
+			document.getElementById('berubah').style.color="red";
+		}
+		function membesar(x) {
+			x.style.width = "200px";
+		}
+		function normal(x) {
+			x.style.width = "100px";
+		}
+		// ONKEYDOWN 
+		function keyfunc(event) {
+			var huruf = event.key;
+			document.getElementById('hurufyangdiketikkan').innerHTML=huruf;
+		}
+		// ONKEYUP
+		function keyfunc2() {
+			var tulis = document.getElementById("typehere").value;
+			document.getElementById("hurufyangdiketikkan2").innerHTML = tulis;
+		}
+		// ONLOAD
+		function load() {
+			alert("memuat data telah selesai! :)")
+		}
+	// JS STRING METHODS
+		// STR. LENGTH
+		var teks = document.getElementById("teks1_").placeholder;
+		document.getElementById("txtlength").innerHTML = teks.length;
+		// STR. INDEX OF
+		var teks2 = document.getElementById("teks2_").placeholder;
+		var cari = teks2.indexOf("akan");
+		document.getElementById("txtindexof").innerHTML= cari;
+		// STR LAST INDEX OF
+		var teks3 = document.getElementById("teks3_").placeholder;
+		var cari2 = teks3.lastIndexOf("sama");
+		document.getElementById("lastindex").innerHTML = cari2;
+		// STR SLICE
+		var gone = document.getElementById("slice").value;
+		var hilang = gone.slice(10,22);
+		var hilang2 = gone.slice(10);
+		var hilang3 = gone.slice(-11);
+		document.getElementById("gone").innerHTML=hilang;
+		document.getElementById("gone2").innerHTML=hilang2;
+		document.getElementById("gone3").innerHTML=hilang3;
+		// STR SUBSTRING
+		var substxt = document.getElementById("substring").value;
+		var taken = substxt.substr(6,6);
+		document.getElementById("substring2").innerHTML = taken;
+		// STR REPLACE
+		function ngganti() {
+			var tteks = document.getElementById("repl").innerHTML;
+			var replaced = tteks.replace("HATE","LOVE");
+			var replaced2 = tteks.replace("LOVE","HATE");
+			if (tteks.substr(15,4) == "HATE") {
+			document.getElementById("repl").innerHTML = replaced;
+			}
+			else {
+				document.getElementById("repl").innerHTML = replaced2;
+			}
+		}
+		// UPPER/LOWER CASE
+		function upper() {
+			var teeks = document.getElementById("lower").innerHTML;
+			document.getElementById("lower").innerHTML = teeks.toUpperCase();
+		}
+		function lower() {
+			var teeks = document.getElementById("lower").innerHTML;
+			document.getElementById("lower").innerHTML = teeks.toLowerCase();
+		}
+		// CONCAT
+		function concat3() {
+			var texas1=document.getElementById("concat3_1").value + "&nbsp";
+			var texas2=document.getElementById("concat3_2").value + "&nbsp";
+			var texas3=document.getElementById("concat3_3").value + "&nbsp";
+			var texas_all= texas1.concat(texas2,texas3);
+			document.getElementById("wordsss").innerHTML=texas_all;
+		}
+		// TRIM
+		function trim() {
+			var theks = "                       Menghilangkan jarak ato spasi diantara kalimat                                               ";
+			alert(theks);
+		}
+		function trim2() {
+			var theks2 = "                       Menghilangkan jarak ato spasi diantara kalimat                                               ";
+			alert(theks2.trim());
+		}
+		// CHAR AT
+		function charAtBut() {
+			var teg = document.getElementById("charAt").innerHTML;
+			var numb = document.getElementById("charAtNum").value;
+			document.getElementById("charAtFin").innerHTML = teg.charAt(numb);
+		}
+		// CHAR AT
+		function charCodeAtBut() {
+			var teg2 = document.getElementById("charCodeAt").innerHTML;
+			var numb2 = document.getElementById("charCodeAtNum").value;
+			document.getElementById("charCodeAtFin").innerHTML = teg2.charCodeAt(numb2);
+		}
+		// SPLIT
+		function split1() {
+			var tegg1 = document.getElementById("splitTeks").innerHTML;
+			var number1 = document.getElementById("splitNum1").value;
+			document.getElementById("split1").innerHTML = tegg1[number1];
+		}
+		function split2() {
+			var tegg2 = document.getElementById("splitTeks").innerHTML;
+			var number2 = document.getElementById("splitNum2").value;
+			var splitt = tegg2.split("|");
+			document.getElementById("split2").innerHTML = splitt[number2];
+		}
+ 	</script>
+</body>
+</html>

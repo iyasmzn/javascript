@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title></title>
+    <style></style>
+  </head>
+  <body>
+  	<script>
+  		var angka = [23000, 45000, 12000,32000,84000];
+  		angka.forEach(function(value,index) {
+  			document.write(index + " : " + value);
+  			document.write("<br>");
+  		});
+  		var contoh_map = angka.map (function(value, index) {
+  			return index + " : " + (value - (value * 20 / 100));
+  			return "<br>";
+  		});
+  		document.write("<br>");
+  		document.write("Diskon 20%");
+  		document.write("<br>");
+  		document.write(contoh_map);
+  		var contoh_filter = angka.filter(function(value) {
+  			return value < 30000;
+  		});
+  		document.write("<br>");
+  		document.write("<br>");
+  		document.write("Harga yang kurang dari 30000");
+  		document.write("<br>");
+  		document.write(contoh_filter);
+  	</script>
+  </body>
+</html>

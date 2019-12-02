@@ -1,0 +1,225 @@
+<html>
+  <head>
+    <title>Calculator V2</title>
+    <style>
+    /* CSS RESET*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* My CSS */
+
+/* Container manipulasi*/
+
+.container{
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(147.16deg, rgba(211, 62, 29, 0.88) 2.16%, rgba(14, 53, 131, 0.88) 100%);
+}
+
+
+/*Body Kalkulator*/
+.kalkulator{
+	position: absolute;
+	width: 320px;
+	height: 500px;
+	box-shadow: 0px 0px 7px rgba(0, 0, 0, 1);
+	border-radius: 16px;
+	overflow: hidden;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/* Layar Kalkulator*/
+.layar{
+	position: relative;
+	width: 320px;
+	height: 100px;
+	border-radius: 16px 16px 0px 0px;
+}
+
+.layar input[type=text]{
+    width: 100%;
+    display: inline-block;
+    height: 60px;
+    background: #C4C4C4;
+    border: 0;
+    text-align: right;
+    font-size: 42px;
+    padding: 20px;
+}
+.layar input:last-child {
+		height: 40px;
+		font-size: 30px;
+}
+/* Menu kalkulator*/
+.menu{
+	width: 320px;
+	height: 400px;
+}
+
+table, table tr, button{
+	border-collapse: collapse;
+	border: none;
+}
+
+/*Tombol Manipulasi*/
+.tombol{
+	width: 80px;
+	height: 80px;
+	background: #4E4D4D;
+	font-size: 24px;
+	font-weight: 600;
+	color: white;
+}
+
+.tombol:hover{
+	background: #cccccc;
+	color: black;
+}
+
+.tombolac{
+	width: 80px;
+	height: 80px;
+	background: #4E4D4D;
+	font-size: 24px;
+	font-weight: 600;
+	color: #C35544;
+}
+.tombolac:hover{
+	width: 80px;
+	height: 80px;
+	background: #C35544;
+	font-size: 24px;
+	font-weight: 600;
+	color: black;
+}
+
+.tombol0{
+	width: 160px;
+	height: 80px;
+	background: #4E4D4D;
+	font-size: 24px;
+	font-weight: 600;
+	color: white;
+}
+
+.tombol0:hover{
+	background: #cccccc;
+	color: black;
+}
+
+.tombolsama{
+	width: 80px;
+	height: 80px;
+	background: #C35544;
+	font-size: 24px;
+	font-weight: 600;
+}
+
+.tombolsama:hover{
+	width: 80px;
+	height: 80px;
+	background: #ffa496;
+	font-size: 24px;
+	font-weight: 600;
+}
+
+/* Focus tombol manipulasi Chrome*/
+.tombol:focus, .tombolac:focus, .tombol0:focus, .tombolsama:focus{
+	outline: none;
+}
+
+/* Focus tombol manipulasi FireFox*/
+.tombol::-moz-focus-inner, .tombolac::-moz-focus-inner, .tombol0::-moz-focus-inner, .tombolsama::-moz-focus-inner {
+  border: 0;
+}
+    </style>
+  </head>
+  <body>
+  	<!-- Awal Container -->
+	<div class="container">		
+		<div class="kalkulator">
+			<div class="layar">
+				<input type="text" id="riwayat" readonly="readonly" value="0">
+				<input type="text" id="riwayat" readonly="readonly" value="0">
+			</div>
+			<div class="menu">
+				<table>
+					<tr>
+						<td><button class="tombolac">AC</button></td>
+						<td><button class="tombol">⌫</button></td>
+						<td><button class="tombol">%</button></td>
+						<td><button class="tombol">/</button></td>
+					</tr>
+					<tr>
+						<td><button class="tombol">7</button></td>
+						<td><button class="tombol">8</button></td>
+						<td><button class="tombol">9</button></td>
+						<td><button class="tombol">X</button></td>
+					</tr>
+					<tr>
+						<td><button class="tombol">4</button></td>
+						<td><button class="tombol">5</button></td>
+						<td><button class="tombol">6</button></td>
+						<td><button class="tombol">-</button></td>
+					</tr>
+					<tr>
+						<td><button class="tombol">1</button></td>
+						<td><button class="tombol">2</button></td>
+						<td><button class="tombol">3</button></td>
+						<td><button class="tombol">+</button></td>
+					</tr>
+					<tr>
+						<td colspan="2"><button class="tombol0">0</button></td>
+						<td><button class="tombol">.</button></td>
+						<td><button class="tombolsama">=</button></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>

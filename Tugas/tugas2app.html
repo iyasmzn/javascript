@@ -1,0 +1,88 @@
+<html>
+  <head>
+  	<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Darker+Grotesque|Poiret+One|Sigmar+One&display=swap" rel="stylesheet"> 
+    <title>Alat Hitung By Iyas XD</title>
+    <style>
+    	.pro {font-family: 'Darker Grotesque', sans-serif; background: black; color: white; margin-right: 850px; margin-left: 50px;font-size: 20px;}
+			hr {color: brown; margin-right: 800px;}
+			.p1 {margin-left: 50px; font-size: 20px; color: orange;}
+			.lab {font-family: 'Darker Grotesque', sans-serif; font-size: 20px; color:#8c8c8c;}
+			.h1 {margin-left: 20px; font-family: 'Dancing Script', cursive; font-size: 45px; color: #7d0019;}
+			h2 {color: #3d3d3d; font-family: 'Poiret One', cursive; font-size: 30px;}		
+			.wee {text-align: center; color: red; background: black; font-size: 70px; font-family: 'Sigmar One', cursive;}
+			.bg1 {background-color: #ffe6ff; margin-right: 800px;}
+			.bg2 {background-color: lightyellow; margin-right: 800px;}
+			.bg3 {background-color: #ebffe6; margin-right: 800px;}
+			.gif {margin-left: 30px;}
+		</style>
+  </head>
+  <body>
+  	<h1 id="name" class="wee"></h1>
+		<script>	
+			alert ("JIKA ANDA AKAN MENILAI SAYA 100, MAKA PILIHLAH TOMBOL 'OK'");
+			var nama = prompt("Apa bahasa inggrisnya bodoh?");
+			document.getElementById("name").innerHTML = "Helloooo Babang " + nama + "!!!! XD";
+		</script>
+		<h1 class="h1">Alat Hitung Bangun Datar<h1>
+		<hr>
+		<div class="bg1">
+		<h2>Alat Hitung Luas Segitiga Sama Kaki</h2>
+		<p class="p1">rumus = 1/2 * alas * tinggi</p>
+		<label class="lab">Alas: <input type="number" id="alas"></label>	
+		<label class="lab">Tinggi: <input type="number" id="tinggi"></label>
+		<button onclick="segitigaSamaKaki()">Hitung!</button>
+		<br>
+		<p class="lab">Luas : <b id="Luas"></b></p>
+		</div>
+		<hr>
+		<div class="bg2">
+		<h2>Alat Hitung Keliling & Luas Lingkaran</h2>
+		<p class="p1">rumus L= π * r<sup>2</sup>, K= π * d</p>
+		<p class="lab">nilai π = 22/7</p>
+		<label class="lab">Jari-Jari : <input type="number" id="jari2"></label>
+		<button onclick="lingkaran()">Hitung!</button>
+		<p class="lab">Diameter: <b type="number" id="diameter"></b></p>
+		<p class="lab">Keliling : <b id="keliling"></b></p>
+		<p class="lab">Luas : <b id="luas"></b></p>
+		</div>
+		<hr>
+		<div class="bg3">
+		<h2>Alat Hitung Luas Layang-Layang</h2>
+		<p class="p1">rumus = 1/2 * d1 * d2</p>
+		<label class="lab">d1: <input type="number" id="d1"></label>
+		<label class="lab">d2: <input type="number" id="d2"></label>
+		<button onclick="layang2()">Hitung!</button>
+		<p class="lab">Luas : <b id="luaS"></b></p>
+		</div>
+		<hr>
+		<div  class="pro">
+		<p><b>Jangan lupa followw yaa!!! :v</b><br>Tweeter = @iyasmzn<br>IG = @iyasmzn<br>Line = iyasmzn<br>FB = Iyas Muzani<br></p>
+		</div>
+		<hr>
+		<img src="https://media.giphy.com/media/o8sLynxpIoDIs/giphy.gif" class="gif">
+		<script>
+			function segitigaSamaKaki() {
+				var alas = document.getElementById('alas').value;
+				var tinggi = document.getElementById('tinggi').value;
+				var luas = alas*tinggi*0.5;
+ 			document.getElementById('Luas').innerHTML=luas;
+			};
+			function lingkaran() {
+				var jari2 = document.getElementById('jari2').value;
+				var diameter = jari2 * 2;
+				var π = 22/7;
+				var luas = π * jari2**2;
+				var	keliling = π * diameter;
+			document.getElementById('diameter').innerHTML=diameter;
+			document.getElementById('keliling').innerHTML=keliling;
+			document.getElementById('luas').innerHTML=luas;
+			};
+			function layang2() {
+				var d1 = document.getElementById('d1').value;
+				var d2 = document.getElementById('d2').value;
+				var luaS = d1 * d2 * 0.5;
+			document.getElementById('luaS').innerHTML=luaS;
+			}
+		</script>
+	</body>
+</html>

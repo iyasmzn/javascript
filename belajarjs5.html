@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title></title>
+    <style></style>
+  </head>
+  <body>
+		<h3>Contoh dari Mas Abid=</h3>
+		<label>
+			panjang: <input type="number" id="panjang">
+		</label>
+		<label>
+			lebar: <input type="number" id="lebar">
+		</label>
+		<button onclick="hitungLuasPersegiPanjang()">hitung</button>
+		<br><br>
+		Luas: <b id="Luas"></b>
+		<script>
+			function hitungLuasPersegiPanjang() {
+				var panjang = document.getElementById('panjang').value;
+				var lebar = document.getElementById('lebar').value;
+				var hasil = panjang * lebar;
+				document.getElementById('Luas').innerHTML =hasil;
+			};
+		</script>
+	</body>
+</html>

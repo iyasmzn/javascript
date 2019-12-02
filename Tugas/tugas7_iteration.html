@@ -1,0 +1,72 @@
+<html>
+	<head>
+		<title>JS Iteration | iyasmzn</title>
+	</head>
+	<body>
+		<script>
+			document.write("This is the sample");
+			document.write("<br>");
+			// XXXX.forEach(function(value,index,array))
+			var sample = [100,200,500,1000,2000,5000,10000,20000,50000,100000];
+			sample.forEach(function(val,ind) {
+					document.write((ind+1) + " : " + val + "<br>");
+			});
+			// XXXX.map(function(value,index,array))
+			var map_ = sample.map(function(val,ind) {
+				return ind + " : " + (val + ( val/2 )); 
+			});
+			// XXXX.filter(function(value,index,array))
+			var filter_ = sample.filter(function(val){
+				return val <= 50000;
+			});
+			// XXXX.reduce(function(total,value,index,array))
+			var reduce_ = sample.reduce(function(tot, val){
+				return tot + val;
+			});
+			var reduceRight_ = sample.reduceRight(function(tot, val, ind){
+				return tot + ind;
+			});
+			// XXXX.every(function(value,index,array))
+			var every_ = sample.every(function(val){
+				return val > 0 ;
+			});
+			// XXXX.some(function(value,index,array))
+			var some_ = sample.some(function(val){
+				return val > 50000 ;
+			});
+			// XXXX.indexOf(array value))
+			var indexOf_ = sample.indexOf(50000);
+			// XXXX.lastIndexOf(array value)) return the last position
+			var lastIndexOf_ = sample.indexOf(50000);
+			// XXXX.find(function(value,index,array))
+			var find_ = sample.find(function(val){
+				return val > 10000 ;
+			});
+			// XXXX.findIndex(function(value,index,array))
+			var findIndex_ = sample.findIndex(function(val){
+				return val > 10000 ;
+			});
+			
+			document.write("<br>");
+			document.write(map_);
+			document.write("<br><br>");
+			document.write(filter_);
+			document.write("<br><br>");
+			document.write(reduce_);
+			document.write("<br><br>");
+			document.write(reduceRight_);
+			document.write("<br><br>");
+			document.write("All money is over than 0, true? " + every_);
+			document.write("<br><br>");
+			document.write(">50000 : " + some_);
+			document.write("<br><br>");
+			document.write("index dari 50000 adl " + indexOf_);
+			document.write("<br><br>");
+			document.write("index dari 50000 adl " + lastIndexOf_);
+			document.write("<br><br>");
+			document.write(find_);
+			document.write("<br><br>");
+			document.write(findIndex_);
+		</script>
+	</body>
+</html>

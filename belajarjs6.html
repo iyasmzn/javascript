@@ -1,0 +1,40 @@
+<script>
+//USER DEFINED FUNCTION
+	// CARA 1 = BUAT SATU JENIS
+	function luas_segitiga1(){
+		var alas1 = 30;
+		var tinggi1 = 90;
+		var hasil1 = 1/2 * alas1 * tinggi1;
+		document.write(hasil1);    
+
+		return hasil1; 
+	}
+
+	luas_segitiga1();
+
+	document.write("<br>"); 
+	
+	//CARA 2 = DIGUNAKAN UNTUK BANYAK JENIS
+ 	function luas_segitiga(alas, tinggi, satuan){
+		var hasil = 1/2 * alas * tinggi;
+
+		return hasil+satuan; 
+	}
+
+	document.write(luas_segitiga(20, 50, "cm"));
+	document.write("<br>");
+	document.write(luas_segitiga(40, 80, "km"));
+	document.write("<br>");
+	//CARA 2 BEDANYA VARIABEL FUNCTION NYA ADA YANG SUDAH DIJELASKAN
+	function luas_segitiga2(alas2, tinggi2, satuan2="CM"){
+		var hasil2 = 1/2 * alas2 * tinggi2;
+
+		return hasil2+satuan2; 
+	}
+
+	document.write(luas_segitiga2(20, 50));
+	document.write("<br>");
+	document.write(luas_segitiga2(40, 80));
+	document.write("<br>");
+	
+</script>

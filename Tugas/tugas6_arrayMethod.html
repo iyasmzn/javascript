@@ -1,0 +1,116 @@
+<html>
+  <head>
+    <title>Array Method | iyasmzn</title>
+    <style>
+    	* {
+    		text-align: center;
+    	}
+    	button {
+    		text-transform: uppercase;
+    	}
+    </style>
+  </head>
+  <body>
+  	<h1>ARRAY METHODS</h1>
+  	<h2>SAMPLE</h2>
+  	<p>
+  	var bijet = ["Iyas","Fida","Shofi","Upek","Daksa","Aji","Alisa","Annida","Fitriana","Syarif","Irbah"];</p>
+  	<h2>toString()</h2>
+  		<p id="toString"></p>
+  	<h2>join()</h2>
+  		<p>Pilih simbol yang akan dipakai untuk pemisah</p>
+  		<select id="join_" onchange="join_()">
+  			<option value=" "> </option>
+  			<option value="/">/</option>
+  			<option value="|">|</option>
+  			<option value=",">,</option>
+  			<option value=".">.</option>
+  			<option value="+">+</option>
+  			<option value="-">-</option>
+  			<option value="_">_</option>
+  		</select>
+  		<p id="join2"></p>
+  	<h2>pop()</h2>
+  		<button onclick="pop_2()">pop value</button>
+  		<p id="pop_2"></p>
+  		<button onclick="pop_()">generate</button>
+  		<p id="pop_"></p>
+  	<h2>push()</h2>
+  		<button onclick="push_()">generate</button>
+  		<p id="push_"></p>
+  		<p>Menambah pada urutan ke-<span id="push_2"></span></p>
+  	<h2>shift()</h2>
+  		<p id="shift_"></p>
+  	<h2>unshift()</h2>
+  		<button onclick="unshift_()">generate</button>
+  		<p id="unshift_2"></p>
+  		<p>Menambah pada urutan ke-<span id="unshift_"></span> dari kanan</p>
+  	<h2>change</h2>
+  		<button onclick="change_()">generate</button>
+  		<p id="change_"></p>
+  	<h2>delete</h2>
+  		<p id="delete"></p>
+  	<h2>splice()</h2>
+  		<button onclick="splice_()">generate</button>
+  		<p id="splice_"></p>
+  	<h2>concat()</h2>
+  		<p id="concat_"></p>
+  	<h2>slice()</h2>
+  		<p id="slice_"></p>
+  <script type="text/javascript">
+  	var bijet = ["Iyas","Fida","Shofi","Upek","Daksa","Aji","Alisa","Annida","Fitriana","Syarif","Irbah"];
+  	var bijet2 = ["Iyas","Fida","Shofi","Upek","Daksa","Aji","Alisa","Annida","Fitriana","Syarif","Irbah"];
+  	//toString()
+  		document.getElementById('toString').innerHTML = bijet.toString();
+  	//join()
+  	function join_() {
+  		var a = document.getElementById('join_').value;
+  		document.getElementById('join2').innerHTML = bijet.join(a); 
+  	}
+  	//pop()
+  	function pop_() {
+  		var b = bijet2.pop();
+  		document.getElementById('pop_').innerHTML=bijet2;
+  	}
+  	function pop_2() {
+  		document.getElementById('pop_2').innerHTML=bijet2.pop();
+  	}
+  	//push()
+  		document.getElementById('push_').innerHTML=bijet;
+  	function push_() {
+  		document.getElementById('push_2').innerHTML = bijet.push('POLOSAN');
+  		document.getElementById('push_').innerHTML = bijet;
+  	}
+  	//shift()
+  		var  c = bijet2.shift();
+  		document.getElementById('shift_').innerHTML = bijet2;
+  	//unshift()
+  		document.getElementById('unshift_').innerHTML=bijet;
+  	function unshift_() {
+  		document.getElementById('unshift_').innerHTML = bijet.unshift('POLOSAN');
+  		document.getElementById('unshift_2').innerHTML = bijet;
+  	}
+  	//change 
+	  function change_() { 	
+	  	bijet2[1] = "MELPIN"; 
+  		document.getElementById('change_').innerHTML = bijet2; 
+  	}
+  	//delete
+  		var bijets = ["Iyas","Fida","Shofi","Upek","Daksa","Aji","Alisa","Annida","Fitriana","Syarif","Irbah"];
+  		var d = delete bijets[3];
+  		document.getElementById("delete").innerHTML = bijets;
+  	//splice()
+  	function splice_() {
+  		bijet.splice(3,0,"Melvin","Tsabitul","Ismi");
+  		document.getElementById('splice_').innerHTML = bijet;
+  	}
+  	//concat()
+  		var boys = ["Iyas","Upek","Daksa","Aji","Syarif"];
+  		var girls = ["Fida","Shofi","Alisa","Annida","Fitriana","Irbah"];
+  		document.getElementById('concat_').innerHTML = boys.concat(girls);
+  	//slice()
+  		var e = bijet.slice(4);
+  		document.getElementById('slice_').innerHTML = e ;
+  </script>	
+  </body>
+</html>
